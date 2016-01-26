@@ -15,6 +15,7 @@ namespace Soply.Prototype.Locations
     {
         public HomeModule()
         {
+            //todo: inject mysql and elastic context as dependencies to constructor with some container
             var searchContext = new ElasticSearchContext("locations", HttpContext.Current.Server.MapPath(@"~\Data\Settings.json"));
             searchContext.SetupIndex();
 
@@ -27,6 +28,7 @@ namespace Soply.Prototype.Locations
                     var model = this.Bind<Location>();
                     using (var context = new LocationsDbContext())
                     {
+                        //note:here could be an atomicity problem
                         context.Locations.Add(model);
                         context.SaveChanges();
                     }
@@ -41,7 +43,7 @@ namespace Soply.Prototype.Locations
                 return View["Search"];
             };
 
-            //todo: this should be DELETE.
+            //todo: this should be DELETE. Left as GET to easy call from browser.
             Get["/clear"] = _ =>
             {
                 using (var context = new LocationsDbContext())
@@ -54,7 +56,7 @@ namespace Soply.Prototype.Locations
                 return "DB and index cleared.";
             };
 
-            //todo: this should be POST
+            //todo: this should be POST. Left as GET to easy call from browser.
             Get["/load/{count}"] = _ =>
             {
                 var locations = ReadWorldCities(_.count);
