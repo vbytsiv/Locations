@@ -14,7 +14,8 @@ namespace Soply.Prototype.Locations.Data
         private readonly string indexName;
         private readonly string settingsPath;
 
-        private readonly string uri = "http://localhost:9200";
+        //private readonly string uri = "http://localhost:9200";
+        private readonly string uri = "http://e1769d00633423e91f3b85fe2555dab9.us-east-1.aws.found.io:9200";
 
         public ElasticSearchContext(string indexName, string settingsPath)
         {
