@@ -41,7 +41,7 @@ namespace Soply.Prototype.Locations.Data
             using (var client = new WebClient())
             {
                 client.Headers[HttpRequestHeader.ContentType] = "application/json";
-                result = client.UploadString(uri + "/" + this.indexName, "POST", settings.ToString());
+               result = client.UploadString(uri + "/" + this.indexName, "POST", settings.ToString());
             }
 
             Console.WriteLine(result);
@@ -75,7 +75,7 @@ namespace Soply.Prototype.Locations.Data
                 .Query(q => q.Bool(
                     bq => bq.Should(
                         qt => qt.Match(
-                            st => st.OnField(f => f.Title).Query(query).Boost(1)),
+                            st => st.OnField(f => f.Title).Query(query).Boost(5)),
                         qt => qt.Match(
                             sk => sk.OnField(f => f.Keywords).Query(query).Boost(1)),
                         qt => qt.Match(

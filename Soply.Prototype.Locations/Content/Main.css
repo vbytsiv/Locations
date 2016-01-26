@@ -2,6 +2,7 @@
   margin:0;
   padding:0;
 }
+html, body { height: 100%; }
 
 body{
   
@@ -58,7 +59,7 @@ a{
 
 .form{
   float:left;
-  height:86%;
+  height:100%;
   width:100%;
   box-sizing:border-box;
   padding:40px;
@@ -96,7 +97,29 @@ a{
   cursor:pointer;
 }
 
+.navButton{
+  height:50px;
+  width:100%;
+  border-radius:3px;
+  border:rgba(0,0,0,.3) 0px solid;
+  box-sizing:border-box;
+  padding:10px;
+  margin-bottom:50px;
+  background:rgba(24,149,215,1);
+  color:#FFF;
+  font-weight:bold;
+  font-size: 12pt;
+  transition:background .4s;
+  cursor:pointer;
+  text-align:center
+}
+
 .button:hover{
   background:#80b438;
   
+}
+
+div#googleMap{
+    width:100%;
+    height:500px;
 }
