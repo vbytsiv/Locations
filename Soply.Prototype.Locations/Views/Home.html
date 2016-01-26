@@ -4,18 +4,17 @@
     <title>Add New Locations</title>
     <link rel="stylesheet" type="text/css" href="~/Content/Main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="~/scripts/Main.js"></script>
 </head>
 
 <body>
     <form class="form" action="/" method="post">
         <div>
-            <a href="/search">Search</a>
+            <a href="/search">To Search</a>
             <div>
                 <input type="text" id="Latitude" name="Latitude" placeholder="Latitude" required pattern="^(\+|-)?(?:90(?:(?:\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\.[0-9]{1,6})?))$" class="textbox"/>
                 <input type="text" id="Longitude" name="Longitude" placeholder="Longitude" required pattern="^(\+|-)?(?:180(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,6})?))$" class="textbox"/>
             </div>
-            <input type="text" id="Title" name="Title1" placeholder="Title1" required class="textbox"/>
+            <input type="text" id="Title" name="Title" placeholder="Title" required class="textbox"/>
             <input type="text" id="KeyWords" name="KeyWords" placeholder="Key words" class="textbox"/>
             <button type="submit" class="button">Add</button>
         </div>

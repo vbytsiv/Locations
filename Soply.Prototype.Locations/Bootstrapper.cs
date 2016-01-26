@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Nancy.Conventions;
+﻿using Nancy.Conventions;
 using Nancy.Diagnostics;
 using Nancy.Hosting.Aspnet;
 
@@ -16,8 +11,8 @@ namespace Soply.Prototype.Locations
         protected override void ConfigureConventions(NancyConventions nancyConventions)
         {
             base.ConfigureConventions(nancyConventions);
-
             Conventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("scripts"));
+            Conventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("Data"));
         }
     }
 }

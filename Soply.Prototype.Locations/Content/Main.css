@@ -11,11 +11,11 @@ body{
 
 a{
   display:block;
-  color:#ad5482;  
+  color:#ad5482;
   text-decoration:none;
   font-weight:bold;
   margin-top:40px;
-  text-align:center;
+  text-align:left;
 }
 
 #bg{

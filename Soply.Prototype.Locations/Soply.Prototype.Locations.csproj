@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Elasticsearch.Net, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elasticsearch.Net.1.7.1\lib\net45\Elasticsearch.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -100,6 +104,14 @@
       <HintPath>..\packages\Nancy.Hosting.Aspnet.1.4.1\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Nest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\NEST.1.7.1\lib\net45\Nest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -118,7 +130,30 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\jquery-ui-1.11.4.custom\external\jquery\jquery.js" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\index.html" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\jquery-ui.css" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\jquery-ui.js" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\jquery-ui.min.css" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\jquery-ui.min.js" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\jquery-ui.structure.css" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\jquery-ui.structure.min.css" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\jquery-ui.theme.css" />
+    <Content Include="Content\jquery-ui-1.11.4.custom\jquery-ui.theme.min.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Data\world_cities.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="packages.config" />
+    <Content Include="Data\Settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -127,26 +162,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Main.css" />
-    <Content Include="scripts\Main.js" />
     <Content Include="Views\Search.html" />
-    <Content Include="Views\Main.css" />
-    <Content Include="scripts\ai.0.15.0-build58334.js" />
-    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Views\Home.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Data\ElasticSearchContext.cs" />
     <Compile Include="Data\LocationsDbContext.cs" />
     <Compile Include="HomeModule.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\KeyWord.cs" />
-    <Compile Include="ViewModel\LocationViewModel.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="scripts\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
